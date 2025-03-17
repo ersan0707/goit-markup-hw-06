@@ -1,28 +1,22 @@
-// Eklenen JavaScript
 document.addEventListener("DOMContentLoaded", function () {
-    // Mobil menü işlevselliği
     const burgerButton = document.getElementById("burgerButton");
     const closeMenuButton = document.getElementById("closeMenuButton");
     const mobileMenu = document.getElementById("mobileMenu");
-  
+
+    // Eğer butonlar veya menü bulunamazsa hata vermemesi için kontrol ekleyelim
+    if (!burgerButton || !closeMenuButton || !mobileMenu) {
+        console.error("HATA: Menü öğeleri bulunamadı! ID'leri kontrol et.");
+        return;
+    }
+
+    // Menü açma
     burgerButton.addEventListener("click", function () {
-      mobileMenu.classList.add("is-open");
+        mobileMenu.classList.add("is-open");
     });
-  
+
+    // Menü kapama
     closeMenuButton.addEventListener("click", function () {
-      mobileMenu.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
     });
-  
-    // Modal işlevselliği
-    const orderServiceButton = document.querySelector(".solutions-button");
-    const closeModalButton = document.getElementById("closeModal");
-    const modalOverlay = document.getElementById("modalOverlay");
-  
-    orderServiceButton.addEventListener("click", function () {
-      modalOverlay.classList.add("is-open");
-    });
-  
-    closeModalButton.addEventListener("click", function () {
-      modalOverlay.classList.remove("is-open");
-    });
-  });
+});
+
